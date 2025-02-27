@@ -1,5 +1,5 @@
 *{
-    background-color: papayawhip;
+    background-color: white;
     font-family:'Times New Roman', Times, serif;
     text-decoration: none;
    
@@ -9,6 +9,8 @@ h1{
     text-align: center;
     font-size: 2.5rem;
 }
-li{
+.navbar{
     margin: 20px;
+    background-color: orange;
+    width:fit-content;
 }
