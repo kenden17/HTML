@@ -2,12 +2,31 @@
     background-color: white;
     font-family:'Times New Roman', Times, serif;
     text-decoration: none;
-   
+    line-height: 30px;
 }
 
 h1{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
+}
+h2{
+    margin: 20px;
+    background-color: orange;
+    width:fit-content;
+    color: black;
+    border-radius: 10%;
+    padding: 10px;
+    text-align: center;
+}
+div{
+    margin: 20px;
+    background-color: orange;
+    width:fit-content;
+    color: black;
+    border-radius: 10%;
+    padding: 10px;
+    text-align: center;
+    border: solid 3px black 
 }
 .navbar{
     margin: 20px;
@@ -21,4 +40,11 @@ h1{
 .description{
     float: right;
     width: 50%;
+    font-size: large;
+    border: dashed 3px black;
+    padding:10px;
+   
+}
+.navbar:hover{
+    color: white;
 }
