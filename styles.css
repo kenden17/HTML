@@ -3,6 +3,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     line-height: 30px;
+    box-sizing: border-box;
     
 }
 
@@ -22,8 +23,14 @@ h1{
     float: right;
    
 }
+.divtop{
+    margin-top: 0px
+}
 table{
     float: left;
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 td{
@@ -51,4 +58,10 @@ td{
 }
 .right{
     float: right;
+}
+.clear{
+    clear: both;
+}
+img{
+    margin:20px;
 }
