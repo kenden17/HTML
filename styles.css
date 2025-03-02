@@ -3,6 +3,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     line-height: 30px;
+    
 }
 
 h1{
@@ -11,13 +12,18 @@ h1{
 }
 
 .description{
-    float: right;
     width: 68%;
     font-size: large;
     border: solid 3px black;
     padding:10px;
     border-radius: 10px;
+    margin: 30px;
+    margin-right: 100px;
+    float: right;
    
+}
+table{
+    float: left;
 }
 
 td{
@@ -25,6 +31,7 @@ td{
     background-color: orange;
     border-radius: 10px;
     padding: 10px;
+    
 
     
 }
@@ -36,4 +43,12 @@ td{
 
 .navbar:hover{
     color:white;
+}
+
+.left{
+    float: left;
+    
+}
+.right{
+    float: right;
 }
