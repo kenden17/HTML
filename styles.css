@@ -101,3 +101,100 @@ th:hover {
 .dark-mode .description {
     background-color: rgba(255, 255, 255, 0.05);
 }
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #f4a261;
+    padding: 15px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.sidebar ul li strong {
+    color: white;
+    display: block;
+    padding: 8px;
+    background: orange;
+    border-radius: 5px;
+}
+
+.sidebar ul ul {
+    margin-left: 15px;
+}
+
+.sidebar ul ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    background: #ff8c42;
+    transition: 0.3s;
+}
+
+.sidebar ul ul li a:hover {
+    background: orange;
+}
+
+/* Adjust main content to not overlap with sidebar */
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+/* Dark Mode Support */
+.dark-mode .sidebar {
+    background: #333;
+}
+
+.dark-mode .sidebar ul ul li a {
+    background: #444;
+}
+
+.dark-mode .sidebar ul ul li a:hover {
+    background: #666;
+}
+/* This rule will apply only when the page is for AP Human Geography */
+body.ap-hug .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  body.ap-hug .sidebar {
+    width: 25%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    
+  }
+  
+  body.ap-hug .content {
+    width: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  
+  
