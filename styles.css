@@ -1,94 +1,18 @@
-/* Light Mode (Default) */
+/* GENERAL STYLES */
+
+/* Body - Light Mode (Default) */
 body {
     background-color: #f0f0f0; /* Softer light gray */
     color: #222;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.25s, color 0.25s cubic-bezier( 0.79, 0.33, 0.14, 0.53 );
 }
 
-/* Navbar Table */
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
-    border-bottom: 3px solid #ff9800;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th {
-    background-color: #ff9800;
-    border: 2px solid black;
-    padding: 12px;
-    text-align: center;
-    width: 14.2%; /* Equal width for each column */
-}
-
-/* Make Full Button Clickable */
-th a {
-    display: block;
-    padding: 10px;
+/* Link Styles */
+a {
     text-decoration: none;
-    font-weight: bold;
-    color: white;
 }
 
-th:hover {
-    background-color: #e68900;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background-color: #181818;
-    color: #e0e0e0;
-}
-
-.dark-mode th {
-    background-color: #222;
-}
-
-.dark-mode th a {
-    color: white;
-}
-
-.dark-mode th:hover {
-    background-color: #333;
-}
-
-/* Theme Toggle Button */
-#theme-toggle {
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.3s, transform 0.2s;
-    display: block;
-    margin: 15px auto; /* Center the button */
-}
-
-#theme-toggle:hover {
-    background-color: #e68900;
-    transform: scale(1.05);
-}
-
-/* Dark Mode Button */
-.dark-mode #theme-toggle {
-    background-color: #333;
-    color: white;
-}
-
-.dark-mode #theme-toggle:hover {
-    background-color: #444;
-}
-
-/* Keep Page Content Clean */
+/* DESCRIPTION STYLING */
 .description {
     background-color: rgba(255, 255, 255, 0.1);
     border-left: 5px solid #ff9800;
@@ -101,100 +25,109 @@ th:hover {
 .dark-mode .description {
     background-color: rgba(255, 255, 255, 0.05);
 }
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background: #f4a261;
-    padding: 15px;
-    position: fixed;
-    height: 100vh;
-    overflow-y: auto;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-}
 
-.sidebar h2 {
-    text-align: center;
-    color: white;
-    margin-bottom: 15px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.sidebar ul li strong {
-    color: white;
-    display: block;
-    padding: 8px;
-    background: orange;
-    border-radius: 5px;
-}
-
-.sidebar ul ul {
-    margin-left: 15px;
-}
-
-.sidebar ul ul li a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    padding: 5px;
-    border-radius: 5px;
-    background: #ff8c42;
-    transition: 0.3s;
-}
-
-.sidebar ul ul li a:hover {
-    background: orange;
-}
-
-/* Adjust main content to not overlap with sidebar */
+/* GENERAL CONTENT */
 .content {
-    margin-left: 270px;
     padding: 20px;
 }
 
-/* Dark Mode Support */
-.dark-mode .sidebar {
-    background: #333;
-}
 
-.dark-mode .sidebar ul ul li a {
-    background: #444;
-}
+/* NAVBAR STYLES */
 
-.dark-mode .sidebar ul ul li a:hover {
-    background: #666;
-}
-/* This rule will apply only when the page is for AP Human Geography */
-body.ap-hug .container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  body.ap-hug .sidebar {
-    width: 25%;
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-sizing: border-box;
+/* Navbar Table */
+header {
     position: sticky;
     top: 0;
-    
-  }
-  
-  body.ap-hug .content {
-    width: 70%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  
-  
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: 3px solid #ff9800;
+}
+
+/* Main Navigation */
+.mainNav {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;  /* Prevent buttons from wrapping */
+}
+
+/* Button Container Style */
+.mainNav div {
+    flex: 1; /* Distribute equal width to each button container */
+}
+
+/* Button Style in Navbar */
+.mainNav button {
+    background-color: #ff9800;
+    border: 2px solid black;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    width: 100%; /* Ensure buttons take full width of their container */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover effect for buttons */
+.mainNav button:hover {
+    background-color: #e68900;
+}
+
+/* Active Button Styling */
+.mainNav button.active {
+    transform: scale(1.2); /* Keep the button scaled */
+    background-color: #e68900; /* Optionally change background color when active */
+}
+
+
+/* DARK MODE */
+
+/* Dark Mode General */
+.dark-mode {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+/* Dark Mode Navbar Buttons */
+.dark-mode .mainNav button {
+    background-color: #222;
+}
+
+.dark-mode .mainNav button:hover {
+    background-color: #333;
+}
+
+
+/* THEME TOGGLE BUTTON */
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.25s, transform 0.25s;
+    display: block;
+    margin: 15px auto; /* Center the button */
+}
+
+/* Hover effect for theme toggle */
+#theme-toggle:hover {
+    background-color: #e68900;
+    transform: scale(1.05);
+}
+
+/* Dark Mode Theme Toggle */
+.dark-mode #theme-toggle {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode #theme-toggle:hover {
+    background-color: #444;
+}
