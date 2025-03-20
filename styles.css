@@ -4,7 +4,7 @@
 body {
     background-color: #f0f0f0; /* Softer light gray */
     color: #222;
-    transition: background-color 0.25s, color 0.25s cubic-bezier( 0.79, 0.33, 0.14, 0.53 );
+    transition: background-color 0.25s, color 0.25s cubic-bezier(0.79, 0.33, 0.14, 0.53);
 }
 
 /* Link Styles */
@@ -31,10 +31,7 @@ a {
     padding: 20px;
 }
 
-
 /* NAVBAR STYLES */
-
-/* Navbar Table */
 header {
     position: sticky;
     top: 0;
@@ -44,19 +41,16 @@ header {
     border-bottom: 3px solid #ff9800;
 }
 
-/* Main Navigation */
 .mainNav {
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;  /* Prevent buttons from wrapping */
+    flex-wrap: nowrap;
 }
 
-/* Button Container Style */
 .mainNav div {
-    flex: 1; /* Distribute equal width to each button container */
+    flex: 1;
 }
 
-/* Button Style in Navbar */
 .mainNav button {
     background-color: #ff9800;
     border: 2px solid black;
@@ -65,32 +59,26 @@ header {
     font-weight: bold;
     color: white;
     cursor: pointer;
-    width: 100%; /* Ensure buttons take full width of their container */
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect for buttons */
 .mainNav button:hover {
     background-color: #e68900;
 }
 
-/* Active Button Styling */
 .mainNav button.active {
-    transform: scale(1.2); /* Keep the button scaled */
-    background-color: #e68900; /* Optionally change background color when active */
+    transform: scale(1.2);
+    background-color: #e68900;
 }
 
-
 /* DARK MODE */
-
-/* Dark Mode General */
 .dark-mode {
     background-color: #181818;
     color: #e0e0e0;
 }
 
-/* Dark Mode Navbar Buttons */
 .dark-mode .mainNav button {
     background-color: #222;
 }
@@ -99,10 +87,7 @@ header {
     background-color: #333;
 }
 
-
 /* THEME TOGGLE BUTTON */
-
-/* Theme Toggle Button */
 #theme-toggle {
     background-color: #ff9800;
     color: white;
@@ -113,16 +98,14 @@ header {
     border-radius: 6px;
     transition: background-color 0.25s, transform 0.25s;
     display: block;
-    margin: 15px auto; /* Center the button */
+    margin: 15px auto;
 }
 
-/* Hover effect for theme toggle */
 #theme-toggle:hover {
     background-color: #e68900;
     transform: scale(1.05);
 }
 
-/* Dark Mode Theme Toggle */
 .dark-mode #theme-toggle {
     background-color: #333;
     color: white;
@@ -130,4 +113,104 @@ header {
 
 .dark-mode #theme-toggle:hover {
     background-color: #444;
+}
+
+/* 🔹 STICKY NOTES STYLING */
+
+/* Notes Container */
+#notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Sticky Note */
+.note {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 2px solid #ff9800;
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.note:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+}
+
+/* Dark Mode Sticky Note */
+.dark-mode .note {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #ff9800;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.4);
+}
+
+.dark-mode .note:hover {
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.6);
+}
+
+/* Textarea */
+.note textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: #222;
+    font-size: 18px;
+    resize: none;
+    outline: none;
+    font-weight: 500;
+}
+
+/* Dark Mode Textarea */
+.dark-mode .note textarea {
+    color: white;
+}
+
+/* Delete Button */
+.delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ff0066;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 0, 102, 0.7);
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: #cc0052;
+    box-shadow: 0 0 15px rgba(255, 0, 102, 1);
+}
+
+/* Add Button */
+.add-btn {
+    background: linear-gradient(135deg, #ff9800, #e68900);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.7);
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background: linear-gradient(135deg, #ff8500, #d67500);
+    box-shadow: 0 0 25px rgba(255, 152, 0, 1);
+    transform: scale(1.05);
 }

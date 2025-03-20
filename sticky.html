@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stickys</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="index.html" />
-    <title>Spanish 2</title>
+    <link rel="index" href="index.html" />
   </head>
   <header>
     <div class="mainNav">
@@ -35,13 +35,15 @@
         <a href="Spanish.html"><button id="spanishButton">Spanish 2</button></a>
       </div>
       <div>
-        <a href="sticky.html"><button id="stickynotes">Stickys</button></a>
+        <a href="sticky.html"><button id="stickyButton">Stickys</button></a>
       </div>
     </div>
   </header>
   <body>
-    <h2>Spanish 2</h2>
-    <h3>Reflexive Verbs</h3>
+    <h1>Stickys</h1>
+    <button class="add-btn" onclick="addNote()">+ Add Note</button>
+    <div id="notes-container"></div>
+
     <script src="script.js"></script>
   </body>
 </html>
