@@ -42,13 +42,19 @@ header {
 }
 
 .mainNav {
-    width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between; /* This makes the buttons fill the space */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .mainNav div {
-    flex: 1;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allows buttons to grow and fill available space */
 }
 
 .mainNav button {
@@ -59,9 +65,11 @@ header {
     font-weight: bold;
     color: white;
     cursor: pointer;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%; /* Ensures each button stretches to fill its container */
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
 }
 
 .mainNav button:hover {
