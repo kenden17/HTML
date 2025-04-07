@@ -14,15 +14,25 @@ a {
 
 /* DESCRIPTION STYLING */
 .description {
+    display: flex;
     background-color: rgba(255, 255, 255, 0.1);
-    border-left: 5px solid #ff9800;
-    padding: 12px;
-    border-radius: 8px;
-    margin: 10px auto;
-    width: 90%;
+   
+}
+.cardContainer{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.dark-mode .description {
+.cards{
+    border-radius: 10px;
+    border: orange 2px solid;
+    width: 20%;
+    padding: 20px;
+    box-shadow: 0 0 10px 3px orange;
+    margin-bottom: 10%;
+}
+
+.dark-mode .cards {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
