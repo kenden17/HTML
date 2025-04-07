@@ -2,72 +2,98 @@
 
 /* Body - Light Mode (Default) */
 body {
-    background-color: #f0f0f0; /* Softer light gray */
+    background-color: #f0f0f0;
     color: #222;
     transition: background-color 0.25s, color 0.25s cubic-bezier(0.79, 0.33, 0.14, 0.53);
-}
-
-/* Link Styles */
-a {
+  }
+  
+  /* Links */
+  a {
     text-decoration: none;
-}
-
-/* DESCRIPTION STYLING */
-.description {
+    color: inherit;
+  }
+  
+  a:hover {
+    color: papayawhip;
+  }
+  
+  /* Headings */
+  h1 {
+    text-align: center;
+  }
+  
+  /* DESCRIPTION STYLING */
+  .description {
     display: flex;
     background-color: rgba(255, 255, 255, 0.1);
-   
-}
-.cardContainer{
+  }
+  .cardContainers{
     display: flex;
     justify-content: space-evenly;
-}
-
-.cards{
+  }
+  
+  .cardContainer {
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates a responsive grid */
+  gap: 40px; /* Adds space between items */
+  }
+  
+  .card {
     border-radius: 10px;
     border: orange 2px solid;
-    width: 20%;
+    width: fit-content;
+    height: 90%;
+    padding: 30px;
+    box-shadow: 0 0 10px 3px orange;
+    margin: 1%;
+    flex-wrap: wrap;
+  }
+  .cards{
+    border-radius: 10px;
+    border: orange 2px solid;
+    width: 30%;
     padding: 20px;
     box-shadow: 0 0 10px 3px orange;
-    margin-bottom: 10%;
-}
-
-.dark-mode .cards {
+    margin: 1%;
+  }
+  
+  
+  .dark-mode .cards {
     background-color: rgba(255, 255, 255, 0.05);
-}
-
-/* GENERAL CONTENT */
-.content {
+  }
+  
+  /* GENERAL CONTENT */
+  .content {
     padding: 20px;
-}
-
-/* NAVBAR STYLES */
-header {
+  }
+  
+  /* NAVBAR STYLES */
+  header {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
     background-color: white;
     border-bottom: 3px solid #ff9800;
-}
-
-.mainNav {
+  }
+  
+  .mainNav {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between; /* This makes the buttons fill the space */
+    justify-content: space-between;
     margin: 0;
     padding: 0;
     width: 100%;
     box-sizing: border-box;
-}
-
-.mainNav div {
+  }
+  
+  .mainNav div {
     margin: 0;
     padding: 0;
-    flex-grow: 1; /* Allows buttons to grow and fill available space */
-}
-
-.mainNav button {
+    flex-grow: 1;
+  }
+  
+  .mainNav button {
     background-color: #ff9800;
     border: 2px solid black;
     padding: 12px;
@@ -76,37 +102,39 @@ header {
     color: white;
     cursor: pointer;
     box-sizing: border-box;
-    width: 100%; /* Ensures each button stretches to fill its container */
+    width: 100%;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
-}
-
-.mainNav button:hover {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .mainNav button:hover,
+  .mainNav button.active {
     background-color: #e68900;
-}
-
-.mainNav button.active {
+  }
+  
+  .mainNav button.active {
     transform: scale(1.2);
-    background-color: #e68900;
-}
-
-/* DARK MODE */
-.dark-mode {
+  }
+  
+  /* DARK MODE */
+  .dark-mode {
     background-color: #181818;
     color: #e0e0e0;
-}
-
-.dark-mode .mainNav button {
+  }
+  
+  .dark-mode .mainNav button {
     background-color: #222;
-}
-
-.dark-mode .mainNav button:hover {
+  }
+  
+  .dark-mode .mainNav button:hover {
     background-color: #333;
-}
-
-/* THEME TOGGLE BUTTON */
-#theme-toggle {
+  }
+  
+  /* THEME TOGGLE BUTTON */
+  #theme-toggle,
+  #donate-here,
+  #donateHome {
     background-color: #ff9800;
     color: white;
     border: none;
@@ -117,85 +145,45 @@ header {
     transition: background-color 0.25s, transform 0.25s;
     display: block;
     margin: 15px auto;
-}
-
-#theme-toggle:hover {
+  }
+  
+  #theme-toggle:hover,
+  #donate-here:hover,
+  #donateHome:hover {
     background-color: #e68900;
     transform: scale(1.05);
-}
-
-.dark-mode #theme-toggle {
+  }
+  
+  .dark-mode #theme-toggle,
+  .dark-mode #donate-here,
+  .dark-mode #donateHome {
     background-color: #333;
     color: white;
-}
-
-.dark-mode #theme-toggle:hover {
+  }
+  
+  .dark-mode #theme-toggle:hover,
+  .dark-mode #donate-here:hover,
+  .dark-mode #donateHome:hover {
     background-color: #444;
-}
-/*DONATE STYLES*/
-#donate-here{
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.25s, transform 0.25s;
-    display: block;
-    margin: 15px auto;
-}
-#donate-here:hover {
-    background-color: #e68900;
-    transform: scale(1.05);
-}
-.dark-mode #donate-here {
-    background-color: #333;
-    color: white;
-}
-.dark-mode #donate-here:hover {
-    background-color: #444;
-}
-/*DONATE PAGE STYLES*/
-
-#donateHome{
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.25s, transform 0.25s;
-    display: block;
-    margin: 15px auto;
-}
-#donateHome:hover {
-    background-color: #e68900;
-    transform: scale(1.05);
-}
-.dark-mode #donateHome {
-    background-color: #333;
-    color: white;
-}
-.dark-mode #donateHome:hover {
-    background-color: #444;
-}
-
-/* 🔹 STICKY NOTES STYLING */
-
-/* Notes Container */
-#notes-container {
+  }
+  
+  /* 🔹 STICKY NOTES STYLING */
+  
+  /* Notes Container */
+  #notes-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-}
-.top img {
+  }
+  
+  /* Top Image & Title */
+  .top img {
     width: 100%;
     height: 100%;
     display: block;
   }
+  
   .top h1 {
     position: absolute;
     top: 50%;
@@ -204,19 +192,12 @@ header {
     z-index: 1;
     color: white;
     font-size: 3em;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     white-space: nowrap;
   }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  .top a:hover{
-    color: papayawhip;
-  }
   
-/* Sticky Note */
-.note {
+  /* Sticky Note */
+  .note {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
     border: 2px solid #ff9800;
@@ -228,26 +209,25 @@ header {
     position: relative;
     box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s;
-}
-
-.note:hover {
+  }
+  
+  .note:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
-}
-
-/* Dark Mode Sticky Note */
-.dark-mode .note {
+  }
+  
+  .dark-mode .note {
     background: rgba(255, 255, 255, 0.05);
     border-color: #ff9800;
     box-shadow: 0 0 15px rgba(255, 152, 0, 0.4);
-}
-
-.dark-mode .note:hover {
+  }
+  
+  .dark-mode .note:hover {
     box-shadow: 0 0 20px rgba(255, 152, 0, 0.6);
-}
-
-/* Textarea */
-.note textarea {
+  }
+  
+  /* Textarea */
+  .note textarea {
     width: 100%;
     height: 100%;
     border: none;
@@ -257,15 +237,14 @@ header {
     resize: none;
     outline: none;
     font-weight: 500;
-}
-
-/* Dark Mode Textarea */
-.dark-mode .note textarea {
+  }
+  
+  .dark-mode .note textarea {
     color: white;
-}
-
-/* Delete Button */
-.delete-btn {
+  }
+  
+  /* Delete Button */
+  .delete-btn {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -278,15 +257,15 @@ header {
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 0, 102, 0.7);
     transition: all 0.2s;
-}
-
-.delete-btn:hover {
+  }
+  
+  .delete-btn:hover {
     background: #cc0052;
     box-shadow: 0 0 15px rgba(255, 0, 102, 1);
-}
-
-/* Add Button */
-.add-btn {
+  }
+  
+  /* Add Button */
+  .add-btn {
     background: linear-gradient(135deg, #ff9800, #e68900);
     color: white;
     border: none;
@@ -297,15 +276,16 @@ header {
     box-shadow: 0 0 15px rgba(255, 152, 0, 0.7);
     transition: all 0.3s;
     font-weight: bold;
-}
-
-.add-btn:hover {
+  }
+  
+  .add-btn:hover {
     background: linear-gradient(135deg, #ff8500, #d67500);
     box-shadow: 0 0 25px rgba(255, 152, 0, 1);
     transform: scale(1.05);
-}
-
-.mainContent {
+  }
+  
+  /* Main Content */
+  .mainContent {
     line-height: 50px;
     font-size: 1.1em;
-}
+  }
