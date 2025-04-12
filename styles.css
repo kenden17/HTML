@@ -14,14 +14,45 @@ body {
   }
   
   a:hover {
-    color: papayawhip;
+    color: orange;
   }
   
   /* Headings */
   h1 {
     text-align: center;
   }
+  .welcomeToPeerNotes{
+    font-size: 3rem;
+  }
+  .gradeChoiceContainer{
+    display: flex;
+    flex-direction: column; /* makes the children stack vertically */
+  align-items: flex-start; /* aligns items to the left */
+  }
+  .gradeChoice {
+    background-color: #ff9800;
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 40px;
+    font-size: large;
+    box-shadow: 0 0 10px 3px orange;
+    margin: 1%;
+    flex-wrap: wrap;
+    color: white;
+    overflow: hidden;
+    width: 200px;
+  }
   
+  .gradeChoice:hover {
+   background-color: orange;
+  }
+  .gradeWrapper {
+    display: flex;
+    align-items: center; /* center vertically */
+    justify-content: center; /* optional: center horizontally */
+    gap: 30px; /* space between image and buttons */
+    flex-wrap: wrap; /* so it works on small screens too */
+  }
   /* DESCRIPTION STYLING */
   .description {
     display: flex;
@@ -40,11 +71,11 @@ body {
   
   .card {
     border-radius: 10px;
-    border: orange 2px solid;
+    border: #ff9800 2px solid;
     width: fit-content;
     height: 90%;
     padding: 30px;
-    box-shadow: 0 0 10px 3px orange;
+    box-shadow: 0 0 10px 3px #ff9800;
     margin: 1%;
     flex-wrap: wrap;
   }
@@ -61,6 +92,7 @@ body {
   .dark-mode .cards {
     background-color: rgba(255, 255, 255, 0.05);
   }
+  
   
   /* GENERAL CONTENT */
   .content {

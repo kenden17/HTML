@@ -4,69 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Peer Notes</title>
+    <title>PeerNotes</title>
   </head>
-  <header>
-    <div class="mainNav">
-      <div>
-        <a href="index.html"><button id="homeButton">Home</button></a>
-      </div>
-      <div>
-        <a href="Aphug.html"
-          ><button id="aphugButton">Ap Human Geography</button></a
-        >
-      </div>
-      <div>
-        <a href="bio.html"><button id="bioButton">Biology</button></a>
-      </div>
-      <div>
-        <a href="English.html"><button id="englishButton">English 9</button></a>
-      </div>
-      <div>
-        <a href="geometry.html"
-          ><button id="geometryButton">Geometry</button></a
-        >
-      </div>
-      <div>
-        <a href="health.html"><button id="healthButton">Health</button></a>
-      </div>
-      <div>
-        <a href="Spanish.html"><button id="spanishButton">Spanish 2</button></a>
-      </div>
-      <div>
-        <a href="sticky.html"><button id="stickyButton">Stickys</button></a>
-      </div>
-    </div>
-  </header>
-
   <body>
-    <h1>Peer Notes</h1>
-    <div class="cardContainers">
-      <div class="cards">
-        <div class="cardTitle">
-          <h2>Donations</h2>
-        </div>
-        <p>
-          This website takes time and money to keep running, so please consider
-          a donation.
-        </p>
-      </div>
-      <div class="cards">
-        <div class="cardTitle">
-          <h2>Contributers</h2>
-        </div>
-        <p>Kenden Dilkhush</p>
-      </div>
-      <div class="cards">
-        <div class="cardTitle">
-          <h2>Version</h2>
-        </div>
-        <p>6.37</p>
+    <h1 class="welcomeToPeerNotes">Welcome to PeerNotes</h1>
+    <div class="gradeWrapper">
+      <img src="cedarburg.png" alt="School Logo" class="gradeImage" />
+
+      <div class="gradeChoiceContainer">
+        <a href="freshman.html"
+          ><button class="gradeChoice">Freshman</button></a
+        >
+        <a href="sophmore.html"
+          ><button class="gradeChoice">Sophmore</button></a
+        >
+        <a href="junior.html"><button class="gradeChoice">Junior</button></a>
+        <a href="senior.html"><button class="gradeChoice">Senior</button></a>
       </div>
     </div>
-
     <button id="theme-toggle">Light/Dark Mode</button>
     <a href="donateHere.HTML"><button id="donate-here">Donate Here</button></a>
-    <script src="script.js"></script>
   </body>
+  <script src="script.js"></script>
 </html>
