@@ -46,6 +46,7 @@ body {
   
   .gradeChoice:hover {
    background-color: orange;
+   transform: scale(1.05);
   }
   .gradeWrapper {
     display: flex;
