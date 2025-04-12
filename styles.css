@@ -22,7 +22,8 @@ body {
     text-align: center;
   }
   .welcomeToPeerNotes{
-    font-size: 3rem;
+    font-size: 5rem;
+    margin: 10px;
   }
   .gradeChoiceContainer{
     display: flex;
