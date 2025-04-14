@@ -64,6 +64,10 @@ body {
     display: flex;
     justify-content: space-evenly;
   }
+  .cardContainerLang{
+    display: flex;
+    justify-content: space-around;
+  }
   
   .cardContainer {
     display: grid;
