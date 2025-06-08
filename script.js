@@ -1,53 +1,217 @@
+function updateTime() {
+  const timeElement = document.querySelector('.time');
+  const now = new Date();
+  
+  // Format the time as HH:MM AM/PM
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  
+  hours = hours % 12 || 12; // Convert to 12-hour format
 
- 
+  timeElement.textContent = `${hours}:${minutes} ${ampm}`;
+}
 
-  // Notes app logic
-  const notesContainer = document.getElementById("notes-container");
+updateTime(); // Set it once when the page loads
+setInterval(updateTime, 1000); // Update every second (optional)
 
-  function loadNotes() {
-    if (!notesContainer) return;
-    notesContainer.innerHTML = "";
-    const notes = JSON.parse(localStorage.getItem("notes")) || [];
-    notes.forEach((noteText) => {
-      createNoteElement(noteText);
+let workDuration = 25 * 60; // 25 minutes
+let breakDuration = 5 * 60; // 5 minutes
+let currentTime = workDuration;
+let isRunning = false;
+let isWork = true;
+let interval;
+
+const timerDisplay = document.getElementById("timer");
+const statusText = document.getElementById("status");
+
+function updateDisplay() {
+  const minutes = Math.floor(currentTime / 60).toString().padStart(2, '0');
+  const seconds = (currentTime % 60).toString().padStart(2, '0');
+  timerDisplay.textContent = `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+  if (!isRunning) {
+    interval = setInterval(() => {
+      currentTime--;
+      updateDisplay();
+      if (currentTime === 0) {
+        clearInterval(interval);
+        // Log session if work session just ended
+        if (isWork) logSession();
+        isWork = !isWork;
+        currentTime = isWork ? workDuration : breakDuration;
+        statusText.textContent = isWork ? "Work Session" : "Break Time";
+        startTimer(); // auto-start next session
+      }
+    }, 1000);
+    isRunning = true;
+  }
+}
+
+function pauseTimer() {
+  clearInterval(interval);
+  isRunning = false;
+}
+
+function resetTimer() {
+  pauseTimer();
+  currentTime = isWork ? workDuration : breakDuration;
+  updateDisplay();
+}
+
+updateDisplay();
+
+// --- To-Do List ---
+const todoForm = document.getElementById("todo-form");
+const todoInput = document.getElementById("todo-input");
+const todoList = document.getElementById("todo-list");
+
+// Load saved todos
+const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+savedTodos.forEach(todo => addTodo(todo.text, todo.completed));
+
+// Add new to-do
+todoForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const text = todoInput.value.trim();
+  if (text !== "") {
+    addTodo(text);
+    todoInput.value = "";
+  }
+});
+
+// Add a to-do item to the list
+function addTodo(text, completed = false) {
+  const li = document.createElement("li");
+  li.textContent = text;
+  if (completed) li.classList.add("completed");
+
+  li.addEventListener("click", () => {
+    li.classList.toggle("completed");
+    saveTodos();
+  });
+
+  const del = document.createElement("button");
+  del.textContent = "❌";
+  del.addEventListener("click", (e) => {
+    e.stopPropagation();
+    li.remove();
+    saveTodos();
+  });
+
+  li.appendChild(del);
+  todoList.appendChild(li);
+  saveTodos();
+}
+
+// Save todos to localStorage
+function saveTodos() {
+  const todos = [];
+  todoList.querySelectorAll("li").forEach(li => {
+    todos.push({
+      text: li.firstChild.textContent,
+      completed: li.classList.contains("completed")
     });
+  });
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+
+
+
+const progressBar = document.getElementById("progressBar");
+
+function updateProgressBar() {
+  const totalDuration = isWork ? workDuration : breakDuration;
+  const elapsed = totalDuration - currentTime;
+  const percent = (elapsed / totalDuration) * 100;
+  progressBar.style.width = percent + "%";
+}
+interval = setInterval(() => {
+  currentTime--;
+  updateDisplay();
+  updateProgressBar();  // <-- update bar as time changes
+
+  if (currentTime === 0) {
+    clearInterval(interval);
+    isWork = !isWork;
+    currentTime = isWork ? workDuration : breakDuration;
+    statusText.textContent = isWork ? "Work Session" : "Break Time";
+    progressBar.style.width = "0%"; // reset bar
+    startTimer(); // auto start next session
+  }
+}, 1000);
+
+const quotes = [
+  { text: "Failure is not the opposite of success, it is part of success.", author: "Nambi Narayanan" },
+  { text: "Be the change you wish to see in the world.", author: "Mahatma Gandhi" },
+  { text: "The pain you feel today will be the strength you feel tomorrow.", author: "Ryhan Sehgal" },
+  { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" }
+];
+
+function showDailyQuote() {
+  const today = new Date().toISOString().split('T')[0];
+  let dailyQuote = JSON.parse(localStorage.getItem("dailyQuote")) || {};
+
+  if (dailyQuote.date !== today) {
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    dailyQuote = { date: today, text: quote.text, author: quote.author };
+    localStorage.setItem("dailyQuote", JSON.stringify(dailyQuote));
   }
 
-  function saveNotes() {
-    const notes = Array.from(document.querySelectorAll(".note textarea")).map(
-      (note) => note.value
-    );
-    localStorage.setItem("notes", JSON.stringify(notes));
+  document.getElementById("quoteText").textContent = `"${dailyQuote.text}" — ${dailyQuote.author}`;
+}
+
+showDailyQuote();
+
+
+const noteInput = document.getElementById("noteInput");
+const noteList = document.getElementById("noteList");
+
+function loadNotes() {
+  const saved = JSON.parse(localStorage.getItem("quickNotes")) || [];
+  saved.forEach(note => renderNote(note));
+}
+
+function addNote() {
+  const text = noteInput.value.trim();
+  if (text) {
+    renderNote(text);
+    saveNote(text);
+    noteInput.value = "";
   }
+}
 
-  function addNote() {
-    createNoteElement("");
-    saveNotes();
-  }
+function renderNote(text) {
+  const li = document.createElement("li");
+  li.textContent = text;
 
-  function createNoteElement(text) {
-    const note = document.createElement("div");
-    note.classList.add("note");
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "×";
+  delBtn.onclick = () => {
+    li.remove();
+    deleteNote(text);
+  };
 
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.addEventListener("input", saveNotes);
+  li.appendChild(delBtn);
+  noteList.appendChild(li);
+}
 
-    const deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("delete-btn");
-    deleteBtn.innerText = "X";
-    deleteBtn.onclick = () => {
-      note.classList.add("fade-out");
-      setTimeout(() => {
-        note.remove();
-        saveNotes();
-      }, 300);
-    };
+function saveNote(text) {
+  const notes = JSON.parse(localStorage.getItem("quickNotes")) || [];
+  notes.push(text);
+  localStorage.setItem("quickNotes", JSON.stringify(notes));
+}
 
-    note.appendChild(textarea);
-    note.appendChild(deleteBtn);
-    notesContainer.appendChild(note);
-  }
+function deleteNote(text) {
+  let notes = JSON.parse(localStorage.getItem("quickNotes")) || [];
+  notes = notes.filter(note => note !== text);
+  localStorage.setItem("quickNotes", JSON.stringify(notes));
+}
 
-  window.onload = loadNotes;
+loadNotes();
 
