@@ -340,3 +340,62 @@ canvas {
   background: #cbd5e0;
 }
 
+/* Hide element when needed */
+.hidden {
+  display: none !important;
+}
+
+/* Modal overlay */
+#name-prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* above everything */
+}
+
+/* Modal box */
+#name-prompt .modal-content {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
+  text-align: center;
+  font-family: sans-serif;
+}
+
+/* Input inside modal */
+#username-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+/* Save button */
+#save-name-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #4c89ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#save-name-btn:hover {
+  background-color: #3a62cc;
+}
+

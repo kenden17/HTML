@@ -215,3 +215,45 @@ function deleteNote(text) {
 
 loadNotes();
 
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const namePrompt = document.getElementById("name-prompt");
+  const saveBtn = document.getElementById("save-name-btn");
+  const nameInput = document.getElementById("username-input");
+  const welcomeHeader = document.querySelector(".header h1"); // Assuming your welcome header is <h1> inside .header
+
+  // Function to update the welcome message
+  function updateWelcome(name) {
+    welcomeHeader.textContent = `Welcome, ${name}!`;
+  }
+
+  // Check if name exists in localStorage
+  const savedName = localStorage.getItem("username");
+  if (savedName) {
+    updateWelcome(savedName);
+    namePrompt.classList.add("hidden");
+  } else {
+    namePrompt.classList.remove("hidden");
+  }
+
+  // Save button click handler
+  saveBtn.addEventListener("click", () => {
+    const enteredName = nameInput.value.trim();
+    if (enteredName) {
+      localStorage.setItem("username", enteredName);
+      updateWelcome(enteredName);
+      namePrompt.classList.add("hidden");
+    } else {
+      alert("Please enter your name.");
+    }
+  });
+});

@@ -2,21 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
     <title>Personal Workspace</title>
   </head>
   <body>
-    <div class="header">
-      <h1>Welcome</h1>
-      <div class="top-right">        
-        <h1 class="time"></h1>
-        </div>
+    <!-- Name prompt modal -->
+    <div id="name-prompt" class="hidden">
+      <div class="modal-content">
+        <p>Please enter your name:</p>
+        <input type="text" id="username-input" placeholder="Your name" />
+        <button id="save-name-btn">Save</button>
       </div>
     </div>
- <a href="calendar.html" class="nav-link">📅 Open Calendar</a>
 
-    <div class="pomodoro">
+    <div class="header">
+      <h1>Welcome</h1>
+      <div class="top-right">
+        <h1 class="time"></h1>
+      </div>
+    </div>
+
+    <nav>
+      <a href="calendar.html" class="nav-link">📅 Open Calendar</a>
+      <a href="flashcards.html" class="nav-link">📚 Open Flashcards</a>
+    </nav>
+
+    <section class="pomodoro">
       <h1>Work Session Timer</h1>
       <div class="timer" id="timer">25:00</div>
       <div class="controls">
@@ -25,13 +37,13 @@
         <button onclick="resetTimer()">Reset</button>
       </div>
       <p id="status">Work Session</p>
-    </div>
+    </section>
 
-    <!-- Dashboard Widgets -->
-    <div class="dashboard-widgets">
+    <section class="dashboard-widgets">
       <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
       </div>
+
       <div class="todo-container">
         <h2>To-Do List</h2>
         <form id="todo-form">
@@ -45,18 +57,19 @@
         </form>
         <ul id="todo-list"></ul>
       </div>
-      <div class="daily-quote">
-       <h2>Daily Quote</h2>
-         <p id="quoteText"></p>
-      </div>
-      <div class="quick-notes">
-  <h2>Quick Notes</h2>
-  <textarea id="noteInput" placeholder="Type your note..."></textarea>
-  <button onclick="addNote()">Save Note</button>
-  <ul id="noteList"></ul>
-</div>
 
-    </div>
+      <div class="daily-quote">
+        <h2>Daily Quote</h2>
+        <p id="quoteText"></p>
+      </div>
+
+      <div class="quick-notes">
+        <h2>Quick Notes</h2>
+        <textarea id="noteInput" placeholder="Type your note..."></textarea>
+        <button onclick="addNote()">Save Note</button>
+        <ul id="noteList"></ul>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>
