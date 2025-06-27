@@ -2,74 +2,102 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+
+    <title>Kenden Dilkhush</title>
     <link rel="stylesheet" href="styles.css" />
-    <title>Personal Workspace</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <!-- Name prompt modal -->
-    <div id="name-prompt" class="hidden">
-      <div class="modal-content">
-        <p>Please enter your name:</p>
-        <input type="text" id="username-input" placeholder="Your name" />
-        <button id="save-name-btn">Save</button>
-      </div>
-    </div>
+    <!-- Hero -->
+    <header class="hero">
+      <h1 id="typewriter"></h1>
+    </header>
 
-    <div class="header">
-      <h1>Welcome</h1>
-      <div class="top-right">
-        <h1 class="time"></h1>
-      </div>
-    </div>
-
-    <nav>
-      <a href="calendar.html" class="nav-link">📅 Open Calendar</a>
-      <a href="flashcards.html" class="nav-link">📚 Open Flashcards</a>
-    </nav>
-
-    <section class="pomodoro">
-      <h1>Work Session Timer</h1>
-      <div class="timer" id="timer">25:00</div>
-      <div class="controls">
-        <button onclick="startTimer()">Start</button>
-        <button onclick="pauseTimer()">Pause</button>
-        <button onclick="resetTimer()">Reset</button>
-      </div>
-      <p id="status">Work Session</p>
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I'm Kenden Dilkhush — a driven student-athlete, aspiring developer, and
+        lifelong learner. Whether it's on the football field, in the classroom,
+        or building tech projects, I lead with passion and purpose.
+      </p>
     </section>
 
-    <section class="dashboard-widgets">
-      <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
+    <!-- Achievements -->
+    <section id="achievements" class="section">
+      <h2>Highlights</h2>
+      <ul class="grid">
+        <li>Euro Challenge Finalist 2025</li>
+        <li>Varsity Football 2024-25</li>
+        <li>Track 100m & Discus PRs</li>
+      </ul>
+    </section>
 
-      <div class="todo-container">
-        <h2>To-Do List</h2>
-        <form id="todo-form">
-          <input
-            type="text"
-            id="todo-input"
-            placeholder="What do you need to do?"
-            required
-          />
-          <button type="submit">Add</button>
-        </form>
-        <ul id="todo-list"></ul>
-      </div>
-
-      <div class="daily-quote">
-        <h2>Daily Quote</h2>
-        <p id="quoteText"></p>
-      </div>
-
-      <div class="quick-notes">
-        <h2>Quick Notes</h2>
-        <textarea id="noteInput" placeholder="Type your note..."></textarea>
-        <button onclick="addNote()">Save Note</button>
-        <ul id="noteList"></ul>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Flashcards App</h3>
+          <p>Create, store, and flip custom flashcards.</p>
+        </div>
+        <div class="card">
+          <h3>Sticky Notes Dashboard</h3>
+          <p>Post digital reminders with dark/light mode.</p>
+        </div>
+        <div class="card">
+          <h3>LED Light Show (Arduino)</h3>
+          <p>Animated 7x8 LED grid with custom patterns.</p>
+        </div>
       </div>
     </section>
+
+    <!-- Sports -->
+    <section id="sports" class="section">
+      <h2>Sports</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Football 2025</h3>
+          <p>Starting runningback, aiming for Varsity starter.</p>
+        </div>
+        <div class="card">
+          <h3>Track 2025</h3>
+          <p>100m and Discus events — breaking PRs every meet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <ul class="grid">
+        <li>HTML, CSS, JavaScript</li>
+        <li>Arduino & C++</li>
+        <li>Leadership & Teamwork</li>
+        <li>VS Code, GitHub, Canva</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>
+        Email me at
+        <a href="mailto:your.kendendilkhush@gmail.com"
+          >kendendilkhush@gmail.com</a
+        >
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2025 Kenden Dilkhush — All Rights Reserved</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
