@@ -15,7 +15,6 @@ const el = document.getElementById("typewriter");
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingSpeed = 100;
 
 function typeLoop() {
   const currentPhrase = phrases[phraseIndex];
@@ -31,7 +30,7 @@ function typeLoop() {
 
   if (!isDeleting && charIndex === fullText.length) {
     isDeleting = true;
-    setTimeout(typeLoop, 2000); // Wait 2 seconds before deleting
+    setTimeout(typeLoop, 2000); // Pause before deleting
     return;
   }
 
@@ -40,7 +39,7 @@ function typeLoop() {
     phraseIndex = (phraseIndex + 1) % phrases.length;
   }
 
-  const delay = isDeleting ? 60 : 120; // slightly slower typing speed
+  const delay = isDeleting ? 60 : 120;
   setTimeout(typeLoop, delay);
 }
 
