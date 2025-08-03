@@ -89,6 +89,9 @@ h1, h2, h3 {
   border-bottom: 2px solid #0077cc;
   padding-bottom: 8px;
 }
+.pageName{
+  text-align: center;
+}
 
 .grid {
   display: grid;
@@ -138,3 +141,26 @@ a:hover {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+.back-button {
+  position: sticky;
+  top: 20px; /* distance from top */
+  left: 20px;
+  z-index: 1000;
+
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: white;
+  background-color: #004080;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0059b3;
+}
+
+
