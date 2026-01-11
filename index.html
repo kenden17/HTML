@@ -15,33 +15,75 @@
     />
   </head>
   <body>
+    <!-- Site header -->
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true">KD</span>
+          <span class="brand-text">Kenden Dilkhush</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#sports">Sports</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- theme toggle removed -->
+      </div>
+    </header>
+
     <!-- Hero -->
     <header class="hero" role="banner">
-      <h1 id="typewriter"></h1>
+      <div class="hero-inner container">
+        <div class="hero-text">
+          <h1 class="typewriter-wrap" aria-hidden="false">
+            <span
+              id="typewriter"
+              class="typewriter"
+              aria-live="polite"
+              role="text"
+            ></span>
+          </h1>
+          <p class="hero-lead">
+            Student-athlete • Aspiring Developer • Team Leader — building things
+            with discipline and heart.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#projects">See Projects</a>
+            <a class="btn ghost" href="#sports">Explore Sports</a>
+          </div>
+        </div>
+        <!-- hero visual removed by request (keeps hero text + CTAs only) -->
+      </div>
     </header>
 
     <main role="main">
       <!-- About -->
-      <section id="about" class="section" aria-label="About Me">
+      <section id="about" class="section overlap" aria-label="About Me">
         <h2>About Me</h2>
         <p>
           I'm <strong>Kenden Dilkhush</strong> — a driven student-athlete,
           aspiring developer, and lifelong learner. Whether it's on the football
           field, in the classroom, or building tech projects, I lead with
           passion and purpose.
-        </p></section>
-         <section id="about" class="section" aria-label="About Me">
-          <h2>Motto</h2>
+        </p>
+      </section>
+      <section id="motto" class="section" aria-label="Personal Motto">
+        <h2>Motto</h2>
         <p>
           "A dream isn't something you see while asleep, it is something that
           keeps you from sleeping." — Nambi Narayanan. This quote is something I
           live by as a student and athlete. I believe the only way to succeed in
           life is to do what you love while challenging yourself.
         </p>
-        </section>
-         <section id="about" class="section" aria-label="About Me">
+      </section>
+      <section id="drive" class="section" aria-label="Drive">
+        <h2>Drive</h2>
         <p>
-          <h2>Drive</h2>
           I'm driven by the desire to stand out and stay ahead. I put in the
           work to go beyond expectations in everything I do. My biggest
           motivation comes from the idea that someone, somewhere, is still
@@ -83,40 +125,39 @@
       </section>
 
       <!-- Sports -->
-     <section id="sports" class="section" aria-label="Sports">
-  <h2>Sports</h2>
-  <ul class="timeline">
-    <li class="timeline-item">
-      <div class="timeline-content">
-        <h3>Football 2024</h3>
-        <p>Starting runningback, aiming for Varsity playtime.</p>
-        <a href="football2024.html">Read More</a>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-content">
-        <h3>Euro Challenge</h3>
-        <p>All the way to the National Championship.</p>
-        <a href="eurochallenge.html">Read More</a>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-content">
-        <h3>Football 2025</h3>
-        <p>Starting runningback, aiming for Varsity starter.</p>
-        <a href="football2025.html">Read More</a>
-      </div>
-    </li>
-    <li class="timeline-item">
-      <div class="timeline-content">
-        <h3>Track 2025</h3>
-        <p>100m and Discus events — breaking PRs every meet.</p>
-        <a href="track2025.html">Read More</a>
-      </div>
-    </li>
-  </ul>
-</section>
-
+      <section id="sports" class="section" aria-label="Sports">
+        <h2>Sports</h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-content">
+              <h3>Football 2024</h3>
+              <p>Starting runningback, aiming for Varsity playtime.</p>
+              <a href="football2024.html">Read More</a>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">
+              <h3>Euro Challenge</h3>
+              <p>All the way to the National Championship.</p>
+              <a href="eurochallenge.html">Read More</a>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">
+              <h3>Football 2025</h3>
+              <p>Starting runningback, aiming for Varsity starter.</p>
+              <a href="football2025.html">Read More</a>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-content">
+              <h3>Track 2025</h3>
+              <p>100m and Discus events — breaking PRs every meet.</p>
+              <a href="track2025.html">Read More</a>
+            </div>
+          </li>
+        </ul>
+      </section>
 
       <!-- Skills -->
       <section id="skills" class="section" aria-label="Skills">
